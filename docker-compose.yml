@@ -5,7 +5,8 @@ services:
       container_name: openhab2
       restart: always
       # user: `id openhab`
-      device: /dev/ttyUSB0
+      devices: 
+        - /dev/ttyACM0
       volumes:
         - "/etc/localtime:/etc/localtime:ro"
         - "/etc/timezone:/etc/timezone:ro"
@@ -26,7 +27,8 @@ services:
       image: "homegear/rpi-homegear:stable"
       container_name: homegear
       restart: always
-      device: /dev/ttyUSB0
+      devices: 
+        - /dev/ttyACM0
       volumes:
         - "/etc/localtime:/etc/localtime:ro"
         - "/etc/timezone:/etc/timezone:ro"
