@@ -4,7 +4,7 @@ services:
       image: "openhab/openhab:2.1.0-armhf"
       container_name: openhab2
       restart: always
-      user: `id openhab`
+      user: 999
       devices:
         - /dev/ttyACM0
       volumes:
