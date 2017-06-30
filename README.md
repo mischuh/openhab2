@@ -71,3 +71,26 @@ http://docs.openhab.org/installation/docker.html#create-the-openhab-user
 
     # Connect to karaf
     docker exec -it openhab /openhab/runtime/bin/client
+
+
+## influxdb
+https://hub.docker.com/r/hypriot/rpi-influxdb/
+
+##### Conf
+
+    sudo mkdir /opt/influxdb
+    sudo mkdir /opt/influxdb/data
+
+#### Commands
+
+    docker run -d \
+      -p 8086:8086
+      -e ADMIN_USER="openhab2"
+      -e INFLUXDB_INIT_PWD="habopen"
+      -e PRE_CREATE_DB="openhab"
+      --name influxdb
+      --restart always
+      -v /opt/influxdb/data:/data©µ
+      hypriot/rpi-influxdb:latest
+
+    docker exec -it influxdb /usr/bin/influx
