@@ -34,7 +34,7 @@ https://hub.docker.com/r/homegear/homegear/
       -p 2003:2003 \
       --device=/dev/ttyACM0 \
       --name homegear \
-      homegear/homegear:stable
+      homegear/rpi-homegear:stable
 
 
 
